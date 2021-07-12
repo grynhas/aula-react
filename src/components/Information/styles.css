@@ -1,0 +1,20 @@
+.info {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info p {
+  color: #444440;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 32px;
+}
+
+.info span {
+  color: #444440;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+}
