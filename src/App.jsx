@@ -7,12 +7,21 @@ import { Repos } from './components/Repos'
 
 function App() {
   const [dados, setDados] = useState()
+  const [repos, setRepos] = useState([])
+  const github = "celsojuniodev"
+
   useEffect(() => {
-    fetch('https://api.github.com/users/celsojuniodev')
+    fetch(`https://api.github.com/users/${github}`)
       .then(response => response.json())
       .then(data => setDados(data))
   }, [])
-  console.log('aqui', dados)
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${github}/repos`)
+      .then(response => response.json())
+      .then(data => setRepos(data))
+  }, [])
+  console.log('aqui', repos)
   return (
     <>
       <Header data={dados} />
@@ -21,7 +30,9 @@ function App() {
         <Avatar data={dados} />
         <Information number={dados?.following} type='following' />
       </div>
-      <Repos url={dados?.repos_url} />
+      <div className='repo'>
+        {repos.map(repo => <Repos name={repo?.name} />)}
+      </div>
     </>
   );
 

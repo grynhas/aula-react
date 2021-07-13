@@ -1,19 +1,17 @@
-import React from 'react'
 import './styles.css';
 
 
 export function Header({ data }) {
-
   return (
     <header className='header'>
       <div className='box-borde'>
         <div className='box-name'>
-          <text className='title'>
+          <span className='title'>
             {data?.name}
-          </text>
-          <text className='sub-title'>
+          </span>
+          <span className='sub-title'>
             {data?.company}
-          </text>
+          </span>
         </div>
       </div>
     </header>
